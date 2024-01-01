@@ -28,4 +28,17 @@ public class MyCompositeBlock implements CompositeBlock {
         return material;
     }
 
+    public Block add(Block block) {
+        blocks.add(block);
+        return block;
+    }
+
+    public Block remove(Block block) {
+        blocks.remove(block);
+        return block;
+    }
+
+    public void clear() {
+        blocks.clear();
+    }
 }
