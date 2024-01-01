@@ -19,3 +19,4 @@ public class MyBlock implements Block {
         return material;
     }
 }
+
