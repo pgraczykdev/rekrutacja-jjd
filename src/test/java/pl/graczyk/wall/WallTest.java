@@ -110,6 +110,23 @@ class WallTest {
     }
 
     @Test
+    public void should_return_4_as_number_of_blocks_when_only_composite_block_is_present() {
+        //given
+        final Structure wall = new Wall(List.of(
+                new MyCompositeBlock("Red-Gray", "Composite",
+                        List.of(new MyBlock("Red", "Brick"),
+                                new MyBlock("Red", "Brick"),
+                                new MyBlock("Gray", "Concrete"),
+                                new MyBlock("Gray", "Concrete")
+                        ))
+        ));
+        //when
+        int count = wall.count();
+        //then
+        assertThat(count).isEqualTo(4);
+    }
+
+    @Test
     public void should_return_6_as_number_of_blocks_when_composite_block_is_present() {
         //given
         final Structure wall = new Wall(List.of(
